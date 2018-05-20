@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFruit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFruit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,22 +51,44 @@
             this.colName,
             this.colFrom,
             this.colFruit});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(16, 309);
-            this.dataGridViewX1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewX1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.ReadOnly = true;
             this.dataGridViewX1.RowTemplate.Height = 23;
             this.dataGridViewX1.Size = new System.Drawing.Size(520, 223);
             this.dataGridViewX1.TabIndex = 0;
+            this.dataGridViewX1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridViewX1_KeyDown);
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "Name";
+            this.colName.HeaderText = "名字";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colFrom
+            // 
+            this.colFrom.DataPropertyName = "From";
+            this.colFrom.HeaderText = "来自哪里";
+            this.colFrom.Name = "colFrom";
+            this.colFrom.ReadOnly = true;
+            // 
+            // colFruit
+            // 
+            this.colFruit.DataPropertyName = "Fruit";
+            this.colFruit.HeaderText = "水果";
+            this.colFruit.Name = "colFruit";
+            this.colFruit.ReadOnly = true;
             // 
             // label1
             // 
@@ -90,6 +112,7 @@
             this.textBoxX1.PreventEnterBeep = true;
             this.textBoxX1.Size = new System.Drawing.Size(100, 26);
             this.textBoxX1.TabIndex = 2;
+            this.textBoxX1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxX1_KeyDown);
             // 
             // label2
             // 
@@ -137,27 +160,6 @@
             this.textBoxX3.Size = new System.Drawing.Size(100, 26);
             this.textBoxX3.TabIndex = 2;
             // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "Name";
-            this.colName.HeaderText = "名字";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colFrom
-            // 
-            this.colFrom.DataPropertyName = "From";
-            this.colFrom.HeaderText = "来自哪里";
-            this.colFrom.Name = "colFrom";
-            this.colFrom.ReadOnly = true;
-            // 
-            // colFruit
-            // 
-            this.colFruit.DataPropertyName = "Fruit";
-            this.colFruit.HeaderText = "水果";
-            this.colFruit.Name = "colFruit";
-            this.colFruit.ReadOnly = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -172,7 +174,7 @@
             this.Controls.Add(this.dataGridViewX1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("宋体", 12F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

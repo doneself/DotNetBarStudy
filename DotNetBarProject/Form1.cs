@@ -33,5 +33,22 @@ namespace DotNetBarProject
             this.dataGridViewX1.AutoGenerateColumns = false;
             this.dataGridViewX1.DataSource = list;
         }
+
+        private void dataGridViewX1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                
+                this.textBoxX1.Focus();
+            }
+        }
+
+        private void textBoxX1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.textBoxX2.Focus();
+            }
+        }
     }
 }
